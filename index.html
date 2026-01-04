@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind 10</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/flexboxes.css">
+  <link rel="stylesheet" href="assets/nav.css">
+  <link rel="stylesheet" href="assets/typography.css">
+  
+  <link href="dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 min-h-screen p-10">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="bg-white shadow fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+
+            <!-- Logo -->
+            <div class="text-xl font-bold text-wlate-600">
+            <a href="index.html" data-link="home" >
+                <h1>BPHTML10TWNDJS</h1>
+            </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="nav-toggle" class="md:hidden text-2xl focus:outline-none">
+            ☰
+            </button>
+
+            <!-- Desktop links -->
+            <ul id="nav-links" class="hidden md:flex space-x-4 text-gray-700">
+            <li><a href="npm.html" data-link="home" class="nav-link hover:text-slate-100">NPM</a></li>
+            <li><a href="images.html" data-link="about" class="nav-link hover:text-slate-100">Images</a></li>
+            <li><a href="javascript.html" data-link="services" class="nav-link hover:text-slate-100">Javascript</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Mobile dropdown -->
+        <ul id="nav-mobile"
+            class="hidden md:hidden flex flex-col space-y-2 pb-4 text-gray-700 font-medium overflow-hidden max-h-0 transition-all duration-300">
+            <li><a href="npm.html" data-link="home" class="nav-link hover:text-slate-100">NPM</a></li>
+            <li><a href="images.html" data-link="about" class="nav-link hover:text-slate-100">Images</a></li>
+            <li><a href="javascript.html" data-link="services" class="nav-link hover:text-slate-100">Javascript</a></li>
+            </ul>
+        </div>
+    </nav>
+
+  <!-- Add padding so page content isn't hidden behind the fixed nav -->
+  <div class="pt-24"></div>
+
+  <!-- Page content -->
+  <div class="container max-w-4xl mx-auto">
+
+    <p class="mt-6 mb-3">
+      This repo is a minimal, ready‑to‑use starter template for building static HTML projects with Tailwind CSS — ideal for simple prototypes, landing pages, or student projects that don’t require a complex build system. It includes HTML, CSS and Tailwind config files, and is set up so that when you run npm run build, Tailwind will compile only the classes you use into a final stylesheet (output.css), keeping the output clean and optimized.
+    </p>
+    <p class="mb-6">
+        You can view the project here: <a href="https://github.com/BPCourses/BP_HTML_10TWND" target="_blank">BP_HTML_10TWND</a> 
+    </p>
+
+    <!-- ACCORDIONS -->
+    <div class="space-y-4">
+
+      <!-- Accordion 1 -->
+      <div class="border border-gray-300 rounded">
+        <button class="w-full flex justify-between items-center p-4 bg-white font-semibold accordion-btn">
+          NPM Locally and remotely on Netlify
+          <span class="text-xl">+</span>
+        </button>
+        <div class="accordion-content hidden p-4 bg-gray-50 text-gray-700">
+          <div>
+            <p>Installation & Deployment</p>
+            <p class="font-bold">Local Setup</p>
+            <p><code>npm install</code> – installs all dependencies from package.json into node_modules.
+            </p>
+            <p>
+            <code>npm run build</code> – runs the build script to compile Tailwind CSS, process assets, and output a production-ready site (usually in dist/ or public/).
+            </p>
+            <p class="font-bold">Netlify Deployment</p>
+            <p>Connect your GitHub repo; Netlify automatically runs npm install and npm run build on the server.</p>
+            <p>Set Build command to npm run build and Publish directory to your build folder (e.g., dist/).</p>
+            
+            <button class="mt-6">
+              <a href="npm.html" target="_blank" class="text-blue-600 underline">
+                More information on running NPM on Netlify
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion 2 -->
+      <div class="border border-gray-300 rounded">
+        <button class="w-full flex justify-between items-center p-4 bg-white font-semibold accordion-btn">
+          About images in Tailwind projects
+          <span class="text-xl">+</span>
+        </button>
+        <div class="accordion-content hidden p-4 bg-gray-50 text-gray-700">
+          <p class="font-bold">Using Images</p>
+          <img src="public/img/img.jpg" width="100%" height="100%" class="mb-8">
+          <p>
+          Place images in public/ and reference them from root or Tailwind: bg-[url('/img/img.jpg')].
+          Ensures images are copied to the build output and work both locally and on Netlify.
+          </p>
+          <button class="mt-6">
+            <a href="images.html" target="_blank" class="text-blue-600 underline">
+              More information on images and media in Tailwind projects 
+            </a>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Accordion 3 -->
+      <div class="border border-gray-300 rounded">
+        <button class="w-full flex justify-between items-center p-4 bg-white font-semibold accordion-btn">
+          About Tailwind and Javascript
+          <span class="text-xl">+</span>
+        </button>
+        <div class="accordion-content hidden p-4 bg-gray-50 text-gray-700">
+          <p>
+            In this HTML file, JavaScript is used to add interactivity and dynamic behavior to the page. Specifically:
+          </p>
+          <p>
+          <p class="font-bold">Toggle:</p> JavaScript toggles the visibility of accordion content sections when their buttons are clicked and updates the +/- icon accordingly.
+          </p>
+          <p>
+            <p class="font-bold">Mobile Navigation Menu:</p> It handles the slide-down mobile menu toggle, dynamically adjusting the menu’s height for smooth open/close animations.
+          </p>
+          <p>
+            <p class="font-bold">Active Link Highlighting:</p> JavaScript updates the styling of navigation links so the currently selected section is visually highlighted.
+          </p>
+          <p>
+            <p class="font-bold">Navbar Auto-Hide on Scroll:</p> It detects the user’s scroll direction to hide the navbar when scrolling down and reveal it when scrolling up, improving the page’s usability and preserving screen space.
+          </p>
+          <p class="font-bold">
+            In short, JavaScript here controls UI interactions—accordions, responsive menus, link highlighting, and scroll behavior—enhancing the static HTML and Tailwind CSS layout.
+          </p>
+          <button class="mt-6">
+            <a href="javascript.html" target="_blank" class="text-blue-600 underline">
+              More information on Javascript and Tailwind
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT for accordion toggle -->
+  <script>
+      document.querySelectorAll('.accordion-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const content = button.nextElementSibling;
+
+          content.classList.toggle('hidden');
+
+          // Update + / -
+          const icon = button.querySelector('span');
+          icon.textContent = content.classList.contains('hidden') ? '+' : '-';
+        });
+      });
+
+    const navToggle = document.getElementById("nav-toggle");
+    const navMobile = document.getElementById("nav-mobile");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbar = document.getElementById("navbar");
+
+    /* -------------------------
+      1) SLIDE-DOWN MOBILE MENU
+      ------------------------- */
+    navToggle.addEventListener("click", () => {
+      if (navMobile.classList.contains("hidden")) {
+        navMobile.classList.remove("hidden");
+        navMobile.style.maxHeight = navMobile.scrollHeight + "px";
+      } else {
+        navMobile.style.maxHeight = "0px";
+        setTimeout(() => navMobile.classList.add("hidden"), 300);
+      }
+    });
+
+    /* -------------------------
+      2) ACTIVE LINK HIGHLIGHTING
+      ------------------------- */
+    function setActiveLink(name) {
+      navLinks.forEach(link => {
+        if (link.dataset.link === name) {
+          link.classList.add("text-blue-600", "font-semibold");
+        } else {
+          link.classList.remove("text-blue-600", "font-semibold");
+        }
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const page = link.dataset.link;
+        setActiveLink(page);
+      });
+    });
+
+    /* -------------------------
+      3) AUTO-HIDE ON SCROLL
+      ------------------------- */
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", () => {
+      const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollPos > lastScrollTop && scrollPos > 50) {
+        // scrolling down
+        navbar.style.transform = "translateY(-100%)";
+      } else {
+        // scrolling up
+        navbar.style.transform = "translateY(0)";
+      }
+
+      lastScrollTop = scrollPos <= 0 ? 0 : scrollPos;
+    });
+  </script>
+</body>
+</html>
